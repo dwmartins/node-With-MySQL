@@ -1,7 +1,12 @@
 # Como rodar o projeto baixado
 
 Instalar todas as dependencias indicada pelo package.json:
-### npm install
+## npm install
+
+<hr>
+
+Para rodar o projeto:
+## npm start
 
 <hr>
 
