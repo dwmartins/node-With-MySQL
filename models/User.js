@@ -19,6 +19,6 @@ const User = db.define('users', {
 });
 
 //Criar tabela caso não houver
-User.sync();
+// User.sync();
 
 module.exports = User;

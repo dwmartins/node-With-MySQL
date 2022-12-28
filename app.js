@@ -1,12 +1,29 @@
 const express = require('express');
 const app = express();
+const User = require('./models/User');
+
+app.use(express.json());
 
 app.get("/", async (req, res) => {
     res.send('<h2>Página inicial!</h2>');
 })
 
 app.post("/cadastrar", async (req, res) => {
-    res.send('<h2>Página cadastrar!</h2>');
+
+    await User.create(req.body)
+    .then(() => {
+        return res.json({
+            erro: false,
+            mensagem: "Usuário cadastrado com sucesso!"
+        });
+    }).catch(() => {
+        return res.status(400).json({
+            erro: true,
+            mensagem: "Erro: Usuário não cadastrado com sucesso!"
+        });
+    });
+    
+    // res.send('<h2>Página cadastrar!</h2>');
 })
 
 app.listen(8080, () => {
