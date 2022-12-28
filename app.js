@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
 
-const db = require('./models/db');
-
 app.get("/", async (req, res) => {
     res.send('<h2>Página inicial!</h2>');
+})
+
+app.post("/cadastrar", async (req, res) => {
+    res.send('<h2>Página cadastrar!</h2>');
 })
 
 app.listen(8080, () => {
